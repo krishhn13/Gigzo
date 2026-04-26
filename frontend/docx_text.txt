@@ -1,0 +1,271 @@
+﻿INTEGRATED PROJECT SYPNOSIS ON
+GIGZO
+AI-PoweredParametricInsurancePlatform
+SUBMITTED TO
+DEPARTMENTOFCOMPUTERSCIENCEANDENGINEERING
+FOR
+INTEGRATEDPROJECT(22CS038)
+Submittedby:
+KrishanKumarSah (2310990467)
+ArmaanpreetSingh (2310991788)
+VinitSingh (2310992401)
+Semester:VI
+Session:Feb 2026 – May 2026
+INDEX
+S.No
+Title
+PageNumber
+1.
+Introduction
+3
+2.
+ProblemStatement
+4
+3.
+ObjectiveandKeylearning
+5
+4.
+FunctionalRequirements
+6-7
+5.
+Non-functional requirements
+8-10
+6.
+HighLevelDesign
+11-13
+7.
+LowLevelDesign
+14-15
+8.
+Advantages/Disadvantages
+16
+9.
+Conclusion
+17
+10.
+FutureImprovementsandBottlenecks
+18
+11.
+References
+19
+Introduction
+Therapidexpansionofthegigeconomyhastransformedthestructureofmodernemploymentby enabling flexible, on-demand work opportunities across sectors such as delivery services, ride- sharing, logistics support, and freelance digital platforms. Millions of workers now depend on daily task-based earnings rather than fixed monthly salaries, making them highly vulnerable to income instability caused by unpredictable external conditions. Despite their growing contribution to the digital economy, gig workers often remain outside the protection scope of traditional insurance systems due to complex enrollment procedures, delayed claim processing, and rigid policy structures.
+Parametric insurance has emerged as a modern alternative to conventional insurance models by enabling automated compensation based on predefined environmental triggers instead of manual claim verification[1]. This approach eliminates the need for extensive documentation and accelerates payout timelines, making it particularly suitable for time-sensitive income protection scenarios. By integrating real-time environmental data sources such as weather conditions, air qualitylevels,trafficdisruptions, andemergencyrestrictions,parametricsystemscanproactively identify risk conditions and initiate financial support mechanisms without requiring user intervention.
+GigZo is designed as an AI-assisted parametric insurance platform that leverages real-time API integration, automated trigger detection mechanisms, and intelligent backend workflows to provide immediate financial protection to gig workers during disruption events. The platform continuously monitors external risk indicators and activates predefined compensation rules whenever threshold conditions are satisfied. This ensures transparency, consistency, and reliability in claim settlements while reducing administrative overhead and operational delays associated with traditional insurance frameworks.
+The system follows a modular three-layer architecture consisting of a presentation layer for user interaction, an application layer for business logic processing, and a data intelligence layer responsible for environmental monitoring and predictive risk assessment. Cloud-based deployment further enhances scalability, availability, and adaptability of the platform across different geographic regions and workforce segments.
+ProblemStatement
+Gig workers represent one of the fastest-growing segments of the modern workforce, yet they remain highly exposed to income uncertainty due to the absence of structured employment benefits and financial protection mechanisms. Unlike traditional employees who receive fixed salaries and insurance coverage through organizations, gig workers depend on daily task availability anduninterruptedoperationalconditionsfortheirearnings.Anydisruptioncausedby environmental, infrastructural, or regulatory factors can immediately affect their incomestability.
+Several external conditions directly influence the ability of gig workers to perform their tasks efficiently. These include extreme weather events such as heavy rainfall, storms, or heatwaves; rising pollutionlevels affecting mobility and health; government-imposedmovement restrictions during emergencies; natural disasters; traffic congestion; and unexpected operational shutdowns on digital service platforms. Since these factors occur beyond the control of workers, they often lead to sudden income loss without any immediate financial support mechanism.
+Traditional insurance systems are not designed to address such short-term and condition-based income disruptions[1]. They typically involve lengthy claim procedures, manual documentation requirements, verification delays, and dependency on intermediaries before compensation is approved. As a result, gig workers rarely benefit from conventional insurance products, especially in situations requiring instant financial assistance.
+With the increasing dependence on gig-based employment models, there is a growing need foran intelligent and automated insurance solution capable of responding to real-time disruption conditions. Such a system should continuously monitor environmental risk indicators, detect trigger events automatically, and initiate compensation without requiring manual claim submission from users.
+The system aims to reduce claim processing time, improve transparency in settlements, and ensure reliable income support during disruption events, thereby enhancing financial stabilityand resilience within the gig workforce ecosystem.
+Objective &KeyLearnings
+The primary objective of the GigZo platform is to design and develop an automated parametric insurance system that provides timely financial protection to gig workers during external disruption events. The system focuses on integrating real-time environmental data, trigger-based claim processing, and scalable architectureto ensurefast, transparent, and reliable compensation support.
+Objectives
+To develop an automated parametric insurance platform that provides financial protection togig workers during disruption conditions without requiring manual claim submission
+To integrate real-time environmental data sources such as weather, air quality, and traffic APIs for continuous monitoring of external risk factors
+To reduceclaim processing timeand eliminate dependency on traditional documentation-based insurance workflows through system automation
+Toenhancefinancialstabilityandincomesecurityforgigworkersbyprovidingtimelyand reliable compensation during operational interruptions
+KeyLearnings
+UnderstandingandimplementingREST-basedAPIintegrationforreal-timeenvironmentaldata acquisition
+Designing backend automation workflows for trigger detection, claim processing, and payout handling
+Developingrule-basedriskpredictionlogicfordisruptionforecastingusingexternaldatasets
+Applyingfull-stackdevelopmentpracticesusingmodernfrontend,backend,anddatabase technologies for building scalable web applications
+Gainingexperienceindesigningmodularsystemarchitectureforreal-timedecision-support platforms
+FunctionalRequirements& Non-FunctionalRequirements
+The GigZo system is designed with a set of user-centric and automation-driven functional capabilities that ensure seamless operation, minimal manual intervention, and real-time responsiveness. Each functional requirement contributes to building a robust parametric insurance workflow.
+UserRegistration,Authentication,andProfileManagement
+The system provides a secure onboarding mechanism where users (gig workers) can register using credentials such as email, phone number, or third-party authentication (OAuth). Authenticationishandledusingsecureprotocols likeJWT(JSONWeb Tokens)orsession-based authentication.
+User profiles maintain essential data such as work type, location, insurance preferences, and payout details, enabling personalized insurance services.
+InsurancePlanSelectionandCustomization
+Usersareofferedmultipleinsuranceplansbasedonpredefinedparameters suchascoverage type, trigger conditions (e.g., rainfall threshold), and premium cost.
+Thesystemallowscustomizationbyenablinguserstoselect:
+Coveragelimits
+Triggerthresholds
+Durationofinsurance
+Thisflexibilityensuresthatuserscantailorplansaccordingtotheirriskexposureandearning patterns.
+ContinuousMonitoringofExternalAPIs
+The platform integrates with external data providers such as weather, pollution, and traffic APIs. A background service continuously fetches real-time data using RESTful APIs and processes itatregularintervals.This ensuresthatthesystemalwaysoperateson live environmental data[4], which is critical for parametric insurance.
+TriggerConditionDetectionBasedonThresholds
+A rule-based engine evaluates incoming data against predefined thresholds (e.g., rainfall > X mm, AQI > Y level). If conditions satisfy the trigger logic, an event is generated. This detection mechanism is highly optimized to ensure low-latency decision-making, enabling instant system response.
+AutomatedClaimInitiationandProcessing
+Once a trigger condition is met, the system automatically initiates the claim process without requiring user intervention.
+Smartcontractsorbackendlogiccalculatethepayoutbasedon:
+Severityofthecondition
+Selectedinsuranceplan
+Predefinedcompensationrules
+Thiseliminatestraditionalpaperworkandsignificantlyreducesclaimprocessingtime.
+Real-TimeNotificationsandUpdates
+Thesystemensuresuserengagementandtransparencythroughreal-timenotificationsvia:
+Pushnotifications
+SMSoremailalerts
+Usersareinstantlyinformedabout:
+Triggeractivation
+Claimstatus
+Payoutconfirmation
+Non-FunctionalRequirements
+To ensure that GigZo operates efficiently under real-world conditions, several non-functional requirements are incorporated. These define the quality attributes and system performance standards.
+Scalability
+The system is designed using cloud-based infrastructure[3] (e.g., AWS, Vercel) to support horizontal and vertical scaling.
+Microservicesarchitectureandloadbalancingtechniquesensurethattheplatformcanhandle:
+Increasingnumberofusers
+High-frequencyAPIcalls
+Largevolumesofreal-timedata
+Security
+Securityisacriticalaspectofthesystem.Itincludes:
+End-to-enddataencryption(HTTPS,SSL/TLS)
+Secureauthentication(JWT,OAuth)[4]
+Role-basedaccesscontrol(RBAC)
+Sensitive data such as user credentials and financial information is protected using industry- standard practices.
+Performance
+Thesystemisoptimizedforlowlatencyandhighthroughput. Techniques such as:
+Caching(Redis)[5]
+Asynchronousprocessing
+EfficientAPIhandling
+ensurethattriggerdetectionandclaimprocessinghappeninnearreal-time.
+Reliability
+Theplatformensureshighavailabilityusing:
+Redundantservers
+Failovermechanisms
+Continuousmonitoring
+ThisguaranteesminimaldowntimeandconsistentserviceevenduringpeakloadsorAPI failures.
+Usability
+Thesystemisdesignedwithafocusonuserexperience(UX):
+IntuitiveUIdesign
+Minimallearningcurve
+Mobileresponsiveness
+Thisensuresaccessibilityforgigworkerswhomaynothaveadvancedtechnicalknowledge.
+5.6.HardwareandSoftwareRequirements
+Table1Software Requirements
+Component
+Specification
+Processor
+Inteli5or equivalent
+RAM
+Minimum8 GB
+Storage
+256GBSSD(recommended)
+Internet
+Stablebroadband
+Device
+Laptop/Desktop
+Table2Software Requirements
+Software/Tool
+Purpose
+React.js
+Frontenddevelopment
+Node.js/Python
+Backenddevelopment
+MongoDB/PostgreSQL
+Databasemanagement
+VSCode
+Codeeditor
+Git/Github
+Versioncontrol
+APIs(Weather/AQI)
+Dataintegration
+Browser(Chrome)
+Testing
+HighLevelDesign
+TheHigh-LevelDesignofGigZodefinestheoverallsystemarchitecture, majorcomponents,and theirinteractions.Thesystemfollowsa layered and modulararchitecturetoensurescalability, maintainability, and separation of concerns.
+GigZo is designed using a three-tier architecture, whereeach layer is responsible fora specific functionality in the system.
+PresentationLayer(Frontend)
+Thislayerisresponsibleforuserinteractionandprovidesanintuitiveinterfaceforgigworkers.
+DevelopedusingmodernfrontendtechnologiessuchasReact.js,HTML,CSSand JavaScript.
+Providesfeatureslikeuserregistration,dashboardview,insuranceplanselection,and claim tracking.
+Ensuresresponsivedesignandseamlessuserexperienceacrossdevices.
+ApplicationLayer(Backend)
+Theapplicationlayerhandlesthecorebusinesslogicandsystemoperations.
+BuiltusingNode.jsorPython(FastAPI)forefficientrequesthandling
+Managesuserauthentication,insurancelogic,andclaimprocessingworkflows.
+Implementstrigger-basedlogicenginetoevaluatereal-timeconditions
+EnsuressecurecommunicationbetweenfrontendanddatalayerviaRESTAPIs
+Data&IntelligenceLayer
+Thislayerisresponsiblefordatacollection,processing,andintelligentdecision-making.
+IntegrateswithexternalAPIssuchasweather,pollutionandtrafficservices.
+Processesreal-timedatastreamsformonitoringenvironmentalconditions.
+ImplementsAI/MLModelsforriskpredictionanddisruptionforecasting[6]
+StoresdataindatabaseslikeMongoDBorPostgreSQL.
+Cloud&DeploymentLayer
+Toensurescalabilityandavailability,thesystemisdeployedoncloudplatforms.
+UsesserviceslikeAWSorVercelforhostinganddeployment.
+Supportsscalabilitythroughcloudinfrastructureandloadbalancing.
+Ensureshighavailabilityandfaulttolerance.
+Figure1:HighLevelDesign
+6.5WorkflowDiagram
+TheDesignfocusesontheinternalstructureofthesystem,includingmodules,workflows,and data flow between components. It provides a detailed breakdown of how each functionality is implemented. It defines the interaction between different modules, ensuring efficient communication and seamless data processing within the system. Additionally, it helps in translating high-level architecture into executable components, making the system easier to develop, test, and maintain.
+Figure 2: Workflow DiagramFigure 2: Workflow Diagram
+Figure 2: Workflow Diagram
+Figure 2: Workflow Diagram
+LowLevel Design(LLD)
+The Low-Level Design focuses on the internal structure of the system, including modules, workflows, and data flow between components. It provides a detailed breakdown of how each functionality is implemented.
+CoreModules
+Thesystemisdividedintomultiplefunctionalmodules:
+UserModule:Handlesuserregistration,login,authenticationandprofilemanagement.
+PlanModule:Managesinsuranceplans,customizationoptionsandusersubscriptions.
+APIMonitoringModule:Continuouslyfetchesreal-timedatafromexternal APIs.
+TriggerDetectionModule:Evaluatesdataagainstpredefinedthresholdstodetectevents.
+ClaimAutomationModule: Automaticallyinitiatesclaimsoncetriggerconditionsaresatisfied.
+PayoutModule:Calculatescompensationandprocessespaymentstouseraccounts.
+NotificationModule:Sendsreal-timealertsregardingtriggers,claims,and payouts.
+SystemWorkflow
+Theworkflowrepresentshowdataflowsthroughthesystem:
+Userregistersandselectsaninsuranceplan.
+SystemcontinuouslymonitorsenvironmentaldataviaAPIs.
+Incomingdataisprocessedandevaluatedbythetriggerengine.
+Ifconditionsmeetpredefinedthresholds,atriggereventisgenerated.
+Claimisautomaticallyinitiatedandprocessed.
+Compensationamountiscalculatedbasedonpredefinedrules.
+Paymentistransferredtotheuser’saccount.
+Userisnotifiedthroughthesystemdashboardand alerts
+DataFlow&Processing
+Real-timedataisfetched →processed→evaluated→stored.
+Triggerengineactsasthedecision-makingcore.
+Backendensuressynchronizationbetweenmodulesanddatabase.
+Figure3:LowLevelDesign
+Advantages&Disadvantages
+Advantages:
+The GigZo platform introduces a modern approach to insurance by combining automation, real- time data processing, and artificial intelligence. These advantages make the system highly efficient, user-friendly, and scalable in real-world scenarios.
+AutomatedClaimProcessing:Eliminatesmanualclaimfiling,reducingdelaysand ensuring faster resolution through trigger-based execution.
+Real-TimeMonitoring:ContinuousintegrationwithexternalAPIsenablesinstantdetection of environmental disruptions such as weather or pollution.
+Faster Payouts: Predefined conditions allow immediate compensation once a trigger is activated, improving financial reliability for users.
+AI-DrivenInsights:Predictivemodelshelpinidentifyingpotentialrisksinadvance, enhancing system intelligence and decision-making.
+ImprovedTransparency:Clear trigger conditions and predefined payout rules reduce ambiguity and build user trust.
+Disadvantages:
+Despite its innovative approach, the system has certain limitations that must be considered while designing and deploying the platform in real-world environments.
+Dependency on External APIs: The system heavily relies on third-party data sources,which may affect performance if APIs fail or provide inaccurate data.
+Prediction Inaccuracies: AI models may not always produce perfectly accurate results, potentially impacting risk assessment and trigger detection.
+Internet Dependency: Continuous connectivity is required for real-time monitoring and system functionality.
+InitialSystemComplexity:Designingandintegratingmultiplecomponentssuchas APIs, AI models, and automation workflows can be technically challenging.
+DataReliabilityIssues:Variationsinexternaldataqualitycanleadtoinconsistent system behavior.
+Conclusion
+GigZo represents a next-generation insurtech solution that integrates real-time environmental data monitoring, automated trigger-based claim processing, and predictive risk assessment techniques to provide reliable and timely financial protection for gig workers. By adopting a parametric insurance model, the platform removes traditional inefficiencies associated with conventional insurance systems, such as extensive paperwork, manual verification procedures, delayed claim approvals, and dependency on intermediaries. This enables faster response times and ensures that users receive compensation immediately when predefined disruption conditions are detected.
+The platform strengthens operational efficiency through continuous API-based monitoring of external risk factors such as weather conditions, pollution levels, mobility disruptions, and emergency restrictions. Theseautomated trigger mechanisms ensure accuracy, transparency, and consistency in claim settlements while minimizing administrative overhead and human intervention. As a result, GigZo offers a streamlined and dependable alternative to legacy insurance workflows that often fail to meet the urgent needs of gig workers.
+Additionally, the system is designed using a modular and scalable architecture that supports future enhancements such as integration with gig-service platforms, mobile application deployment, blockchain-based claim validation, and advanced predictive analytics. This flexibility makes the solution adaptable to evolving market requirements and suitable for large- scale deployment across diverse geographic regions and workforce segments.
+Overall, GigZo significantly improves responsiveness, accessibility, and reliability compared to traditional insurance approaches. It contributes meaningfully toward financial inclusion by delivering affordable, automated, and timely protection to gig workers - one of the fastest- growing yet most financially vulnerable segments of the modern digital economy.
+FutureImprovements& Bottlenecks
+FutureImprovements
+To further enhance the capabilities and real-world applicability of GigZo, several advanced features and technological integrations can beincorporated. These improvements aim to increase transparency, scalability, and user engagement while strengthening the overall system intelligence.
+Blockchain Integration: Implementing blockchain technology can ensure transparent and tamper-proof claim validation, enhancing trust and auditability in the system
+Integration with Gig Platforms: Direct integration with platforms such as delivery and freelance services can enable seamless user onboarding and real-time datasynchronization
+Advanced AI Optimization: Enhancing machine learning models for better risk prediction, dynamic premium calculation, and personalized insurance recommendations
+Multi-Region Expansion: Extending support to multiple geographic regions with localized data models and policies
+PotentialBottlenecks
+While GigZo offers a robust and innovative solution, certain challenges may arise during implementation and large-scale deployment. Identifying these bottlenecks is essential for improving system reliability and performance.
+APIFailures:Dependenceonthird-partyAPIsmayleadtosystemdisruptionsifdata sources become unavailable or unresponsive
+DataReliabilityIssues:Inconsistentorinaccurateexternaldatacanimpacttrigger detection and claim accuracy
+PaymentProcessingDelays:Delaysinpaymentgatewaysorbankingsystemsmay affect the timeliness of payouts
+Security Risks: Protecting sensitive user and financial data from cyber threats remains a critical concern
+References
+SwissReInstitute,“ParametricInsurance:ClosingtheProtectionGap”SwissRe,Zurich, Switzerland, 2018.
+WorldBankGroup,“FinancialProtectionAgainstClimateRisksUsingParametric Insurance,” Washington, DC, USA, 2021.
+AmazonWebServices,“AWSArchitectureCenter,”Available: https://aws.amazon.com/architecture
+RedisDocumentation,“RedisCachingSystem,”Available:https://redis.io/docs
+Node.jsDocumentation,OpenJSFoundation.Available:https://nodejs.org
+A.Géron,Hands-OnMachineLearningwithScikit-Learn,Keras&TensorFlow,2nded. O’Reilly Media, 2019.
+InsuranceRegulatoryandDevelopmentAuthorityofIndia(IRDAI),“ReportonInnovation in Insurance Sector,” IRDAI, India, 2020.
+OpenWeatherMap,“WeatherAPIDocumentation”Availablehttps://openweathermap.org/api
+WorldAirQualityIndexProject,“AQICNAirQualityAPI,”Available:https://aqicn.org/api/
+GoogleDevelopers,“GoogleMapsTrafficAPIDocumentation,”Available:https://developers.google.com/maps
+Goodfellow, Y . Bengio and A. Courville, Deep Learning. MIT Press, 2016
+React Documentation, Meta Platforms Inc. Available: https://react.dev
